@@ -8,6 +8,10 @@
 // your camera init function
 esp_err_t camera_init_custom(void) {
     camera_config_t config;
+    config.frame_size = FRAMESIZE_SVGA;  // smaller resolution
+    config.jpeg_quality = 10;            // lower quality to save memory
+    config.fb_count = 1;                 // reduce the number of frame buffers
+
     config.ledc_channel = LEDC_CHANNEL_0;
     config.ledc_timer   = LEDC_TIMER_0;
     config.pin_d0       = Y2_GPIO_NUM;
@@ -30,7 +34,7 @@ esp_err_t camera_init_custom(void) {
     config.pixel_format = PIXFORMAT_JPEG;
 
     // frame size, etc.
-    config.frame_size = FRAMESIZE_QVGA; // or FRAMESIZE_HQVGA for smaller
+    config.frame_size = FRAMESIZE_SVGA; // or FRAMESIZE_HQVGA for smaller
     config.jpeg_quality = 12;
     config.fb_count = 1;
 

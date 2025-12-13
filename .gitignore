@@ -60,6 +60,10 @@ target/
 # IDE-specific
 *.sublime-workspace
 *.sublime-project
-
+sdkconfig.old
 # Git
 /.git/
+*virtual
+*Virtual
+*.virtual
+*.Virtual
