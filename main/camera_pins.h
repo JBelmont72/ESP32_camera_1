@@ -1,14 +1,18 @@
 
-/// main/camera_pins.h
+
+
+
+// main/camera_pins.h
 #pragma once
 
 //
 // Correct pin definitions for ESP32-S3-EYE v2.2
-// Matches Espressif schematic + working IDF examples.
+// Matches Espressif schematic + working IDF examples
 //
 
 #define CAM_PIN_PWDN    -1   // No PWDN pin
 #define CAM_PIN_RESET   -1   // No RESET pin (software reset)
+
 #define CAM_PIN_XCLK    15
 #define CAM_PIN_SIOD    4
 #define CAM_PIN_SIOC    5
@@ -27,7 +31,7 @@
 #define CAM_PIN_PCLK    13
 
 //
-// Optional aliases (maintains compatibility with examples)
+// Optional aliases (maintains compatibility with esp-camera examples)
 //
 
 #define Y2_GPIO_NUM     CAM_PIN_D0
