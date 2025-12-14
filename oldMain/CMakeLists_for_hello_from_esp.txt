@@ -1,5 +1,5 @@
 
-# main/CMakeLists.txt
+#main/CMakeLists.txt goes with ESP32_camera_1/oldMain/http_stream_hello_from_esp.c
 idf_component_register(
     SRCS
         "main.c"
