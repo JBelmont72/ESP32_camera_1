@@ -93,6 +93,12 @@ esp_err_t wifi_init_sta(const char *ssid, const char *pass)
     ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_config));
     ESP_ERROR_CHECK(esp_wifi_start());
 
+
+    /* Disable Wi-Fi power save to prevent camera corruption added 17 ded */
+    esp_wifi_set_ps(WIFI_PS_NONE);
+
+
+
     ESP_LOGI(TAG, "WiFi init complete");
     return ESP_OK;
 }

@@ -1,10 +1,14 @@
 
-delete these:
-components/esp32-camera/
-managed_components/
-sdkconfig
-sdkconfig.old
-build/
+
+
+ls /dev/tty.* or ls /dev/cu.*
+
+lsof /dev/cu.usbmodem1101
+
+idf.py build
+idf.py flash -p /dev/tty.usbserial-XXXX
+idf.py monitor
+
 
 ESP32S3_CAM/
  ├── main/

@@ -1,3 +1,6 @@
+
+#   oldMain/QVGA_fles/main.c
+
 #include <stdio.h>
 #include "esp_log.h"
 #include "nvs_flash.h"
@@ -15,10 +18,9 @@ void app_main(void)
     ESP_ERROR_CHECK(nvs_flash_init());
     ESP_ERROR_CHECK(esp_netif_init());
     ESP_ERROR_CHECK(esp_event_loop_create_default());
-    ESP_ERROR_CHECK(camera_init_vga());   // VGA
-    // ESP_ERROR_CHECK(camera_init_qvga()); // QVGA
-    ESP_LOGI(TAG, "Initializing camera...");
 
+    ESP_LOGI(TAG, "Initializing camera...");
+    ESP_ERROR_CHECK(camera_init_custom());
 
     ESP_LOGI(TAG, "Starting Wi-Fi...");
     ESP_ERROR_CHECK(wifi_init_sta("SpectrumSetup-41", "leastdinner914"));
