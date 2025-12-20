@@ -58,6 +58,20 @@ static esp_err_t camera_init_common(framesize_t frame_size, int jpeg_quality)
 
     gpio_set_pull_mode(SIOD_GPIO_NUM, GPIO_PULLUP_ONLY);
     gpio_set_pull_mode(SIOC_GPIO_NUM, GPIO_PULLUP_ONLY);
+//  could use belwobut would just correct the log, see my ReadMe.md
+/*
+    const char *mode_str = "UNKNOWN";
+
+    switch (frame_size) {
+        case FRAMESIZE_QVGA: mode_str = "QVGA"; break;
+        case FRAMESIZE_VGA:  mode_str = "VGA";  break;
+        case FRAMESIZE_SVGA: mode_str = "SVGA"; break;
+    }
+
+    ESP_LOGI(TAG, "Initializing camera (%s)", mode_str);
+
+*/
+
 
     ESP_LOGI(TAG, "Initializing camera (%s)",
              frame_size == FRAMESIZE_VGA ? "VGA" : "QVGA");
@@ -116,7 +130,11 @@ esp_err_t camera_init_qvga(void)
     return camera_init_common(FRAMESIZE_QVGA, 14);
 }
 
-
+esp_err_t camera_init_svga(void)
+{
+    // if use SVGA probably needs lower quality (higher number)
+    return camera_init_common(FRAMESIZE_SVGA, 16);
+}
 
 
 
