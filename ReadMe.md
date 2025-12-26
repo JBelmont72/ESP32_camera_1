@@ -1,5 +1,5 @@
 
-
+git push -u origin main to push commits
 
 ls /dev/tty.* or ls /dev/cu.*
 

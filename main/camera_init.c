@@ -58,7 +58,7 @@ static esp_err_t camera_init_common(framesize_t frame_size, int jpeg_quality)
 
     gpio_set_pull_mode(SIOD_GPIO_NUM, GPIO_PULLUP_ONLY);
     gpio_set_pull_mode(SIOC_GPIO_NUM, GPIO_PULLUP_ONLY);
-//  could use belwobut would just correct the log, see my ReadMe.md
+//  could use belowbut would just correct the log, see my ReadMe.md
 /*
     const char *mode_str = "UNKNOWN";
 

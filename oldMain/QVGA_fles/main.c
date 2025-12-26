@@ -1,5 +1,5 @@
 
-#   oldMain/QVGA_fles/main.c
+/* main.c*/
 
 #include <stdio.h>
 #include "esp_log.h"
@@ -23,11 +23,16 @@ void app_main(void)
     ESP_ERROR_CHECK(camera_init_custom());
 
     ESP_LOGI(TAG, "Starting Wi-Fi...");
-    ESP_ERROR_CHECK(wifi_init_sta("SpectrumSetup-41", "leastdinner914"));
+    ESP_ERROR_CHECK(wifi_init_sta("NETGEAR48-2.4-LOFT", "waterypanda901"));
+    
 
     ESP_LOGI(TAG, "Starting HTTP stream...");
     ESP_ERROR_CHECK(http_stream_start());
 
     ESP_LOGI(TAG, "System ready");
 }
+
+
+
+/* ESP_ERROR_CHECK(wifi_init_sta("SpectrumSetup-41", "leastdinner914"));*/
 
